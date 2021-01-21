@@ -27,14 +27,6 @@
             <artifactId>spring-cloud-stream</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-stream-binder-kafka</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.kafka</groupId>
-            <artifactId>spring-kafka</artifactId>
-        </dependency>
-        <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
@@ -46,6 +38,29 @@
             <classifier>test-binder</classifier>
             <scope>test</scope>
         </dependency>
+
     </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>com.google.cloud.tools</groupId>
+                <artifactId>jib-maven-plugin</artifactId>
+                <version>0.10.1</version>
+                <configuration>
+                    <from>
+                        <image>springcloud/openjdk</image>
+                    </from>
+                    <to>
+                        <image>${docker.org}/${project.artifactId}:${docker.version}</image>
+                    </to>
+                    <container>
+                        <useCurrentTimestamp>true</useCurrentTimestamp>
+                    </container>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
 
 </project>

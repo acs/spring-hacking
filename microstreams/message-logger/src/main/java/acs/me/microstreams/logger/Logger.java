@@ -12,12 +12,12 @@ import acs.me.microstreams.logger.entities.Message;
 @Configuration
 public class Logger {
 
-  private static final org.slf4j.Logger logger = LoggerFactory.getLogger(LoggerApplication.class);
+  private static final org.slf4j.Logger LOGGER = LoggerFactory.getLogger(LoggerApplication.class);
 
   @Bean
-  public Consumer<Message> process() {
+  public Consumer<Message> logUserMessage() {
     return message -> {
-      logger.info(message.getMessage());
+      LOGGER.info(message.getMessage());
     };
   }
 
