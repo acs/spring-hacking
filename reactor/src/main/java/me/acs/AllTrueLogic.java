@@ -22,14 +22,14 @@ public class AllTrueLogic {
     System.out.println(inputsEvents.collectList().block());
     System.out.println(inputsEventsWithData.collectList().block());
 
-//    Flux<Integer> numbersNoZeros = Flux.just(1, 5, 6, 1, 3);
-//    Flux<Integer> numbersSomeZeros = Flux.just(1, 0, 6, 1, 3);
-//
-//    Mono<Boolean> allTrue = numbersNoZeros.all(number -> number > 0);
-//    Mono<Boolean> allTrue1 = numbersSomeZeros.all(number -> number > 0);
-//
-//    System.out.println(allTrue.block());
-//    System.out.println(allTrue1.block());
+    Flux<Integer> numbersNoZeros = Flux.just(1, 5, 6, 1, 3);
+    Flux<Integer> numbersSomeZeros = Flux.just(1, 0, 6, 1, 3);
+
+    Mono<Boolean> allTrue = numbersNoZeros.all(number -> number > 0);
+    Mono<Boolean> allTrue1 = numbersSomeZeros.all(number -> number > 0);
+
+    System.out.println(allTrue.block());
+    System.out.println(allTrue1.block());
 
   }
 
